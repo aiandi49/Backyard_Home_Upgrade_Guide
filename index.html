@@ -201,6 +201,70 @@ footer.closing h2{font-family:var(--display);font-weight:600;font-size:clamp(26p
 @keyframes fadeDown{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:none;}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
 .section, .hero, .note-card, .glance-grid{animation:fadeUp .7s ease both;}
+
+/* =========================================================================
+   MOBILE: center everything except bulleted / hierarchical / sequential
+   content (those keep left alignment so order & nesting stay legible).
+   ========================================================================= */
+@media (max-width:760px){
+  /* header */
+  header.masthead{grid-template-columns:1fr;justify-items:center;row-gap:12px;text-align:center;padding-top:32px;}
+  .brand-text{text-align:center;}
+
+  /* eyebrows / labels */
+  .eyebrow{justify-content:center;text-align:center;}
+
+  /* hero */
+  .hero{text-align:center;}
+  .hero-dek{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* note card */
+  .note-card{text-align:center;}
+  .note-card p{margin-left:auto;margin-right:auto;}
+
+  /* at-a-glance cards */
+  .glance-card{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .glance-meta{align-items:center;}
+
+  /* section / phase header — badge centered, short rule beneath it */
+  .phase-header{flex-direction:column;gap:10px;}
+  .phase-line{flex:none;width:64px;}
+
+  /* project title + dek */
+  .proj-title{text-align:center;}
+  .proj-dek{text-align:center;margin-left:auto;margin-right:auto;}
+
+  /* card titles (icon + label) move as a centered unit */
+  .card-title{justify-content:center;text-align:center;}
+
+  /* spec mini-cards: icon, label, value stacked + centered */
+  .spec-card{display:flex;flex-direction:column;align-items:center;text-align:center;}
+
+  /* tool chips read better centered as a cloud, not a left block */
+  .chip-row{justify-content:center;}
+
+  /* safety callouts: icon above message, message centered */
+  .callout{flex-direction:column;align-items:center;text-align:center;}
+
+  /* notes box label */
+  .notes-box{text-align:center;}
+
+  /* footer */
+  footer.closing{text-align:center;}
+  .decision-item{text-align:center;}
+  .mini-index{justify-content:center;}
+  .boilerplate{text-align:center;}
+
+  /* materials table: centered so wrapped lines in narrow columns
+     read as balanced, not cut off */
+  table.materials thead th{text-align:center;}
+  table.materials td{text-align:center;}
+
+  /* ---- intentionally LEFT AS-IS (their own ecosystem): ----
+     .why-list, .bullet-list (bulleted lists)
+     .steps-list / .step-item (numbered sequence + connecting line)
+  */
+}
 </style>
 </head>
 <body>
